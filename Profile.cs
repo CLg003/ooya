@@ -22,10 +22,29 @@ namespace DatingProfile
 
         }
 
+        public string ListHobbies()
+        {
+            string listHobbies = "";
+            if (this.hobbies.Length == 0) {
+                return listHobbies;
+            } else {
+            foreach (string hobby in this.hobbies) {
+                listHobbies += $"{hobby}, ";
+            }
+            listHobbies = listHobbies.Substring(0, listHobbies.Length - 2);
+            return listHobbies;
+            }
+        }
+
         public string ViewProfile()
         {
-            string profile = $"Name: {this.name} \nAge: {this.age} \nCity: {this.city} \nCountry: {this.country} \nPronouns: {this.pronouns} \nHobbies: {this.hobbies}";
+            string profile = $"Name: {this.name} \nAge: {this.age} \nCity: {this.city} \nCountry: {this.country} \nPronouns: {this.pronouns} \nHobbies: {ListHobbies()}";
             return profile;
+        }
+
+        public void SetHobbies(string[] hobbies)
+        {
+            this.hobbies = hobbies;
         }
     }
 }
