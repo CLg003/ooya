@@ -7,6 +7,7 @@ namespace DatingProfile
         static void Main(string[] args)
         {
             Profile sam = new Profile("Sam Drakkila", 30, "New York", "USA", "he/him");
+            Console.WriteLine(sam.ViewProfile());
         }
     }
 }
